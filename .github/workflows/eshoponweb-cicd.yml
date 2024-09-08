@@ -6,7 +6,7 @@ on: [push, workflow_dispatch]
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
   RESOURCE-GROUP: Eshopweb
-  LOCATION: East US
+  LOCATION: EastUS
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: 6c35802b-0c60-46a9-b85e-3a1a9e47aa68
   WEBAPP-NAME: eshoponweb-webapp-addvait
@@ -81,8 +81,8 @@ jobs:
     - name: deploy
       uses: azure/arm-deploy@v2
       with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
-        resourceGroupName: ${{ env.RESOURCE-GROUP }}
+        subscriptionId: ${{ env.6c35802b-0c60-46a9-b85e-3a1a9e47aa68 }}
+        resourceGroupName: ${{ env.Eshopweb }}
         template: bicep-template/webapp.bicep
         parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
         failOnStdErr: false   
